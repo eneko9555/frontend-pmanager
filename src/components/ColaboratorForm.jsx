@@ -2,9 +2,6 @@ import { useState } from "react"
 import useProyects from "../hooks/useProyects"
 import Alert from "./Alert"
 import PacmanLoader from "react-spinners/BarLoader"
-import Project from "../../../BACKEND/models/Project"
-
-
 
 const ColaboratorForm = () => {
 
@@ -27,7 +24,6 @@ const ColaboratorForm = () => {
     }
 
     
-
     return (
         <>
             <div className="w-full md:w-2/3 lg:w-2/4">
