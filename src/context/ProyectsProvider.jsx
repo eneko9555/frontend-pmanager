@@ -37,12 +37,12 @@ const ProyectsProvider = ({ children }) => {
     }, [auth])
 
     // Connnect to server
-    // useEffect(() => {
-    //     socket = io(import.meta.env.VITE_BACKEND_URL)
-    //     return () => {
-    //         socket.disconnect()
-    //     }
-    // },  [])
+     useEffect(() => {
+         socket = io(import.meta.env.VITE_BACKEND_URL)
+         return () => {
+             socket.disconnect()
+         }
+     },  [])
 
 
     function showAlert(alert) {
