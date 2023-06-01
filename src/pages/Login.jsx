@@ -37,16 +37,18 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="font-black text-7xl">Inicia Sesión y Administra tus <span className="text-sky-800">Proyectos</span></h1>
+      <h1 data-cy="title" className="font-black text-7xl">Inicia Sesión y Administra tus <span className="text-sky-800">Proyectos</span></h1>
 
       <form className="my-10 bg-white shadow-md rounded-lg p-5"
         onSubmit={handleSubmit}
+        data-cy="login-form"
       >
         {alert.msg && <Alert alert={alert} />}
         <div className="my-5">
           <label htmlFor="email" className="text-gray-600 block text-xl font-bold">Email: </label>
           <input
             id="email"
+            data-cy="email-input"
             type="email"
             placeholder="Email de Registro"
             onChange={e => setEmail(e.target.value)}
@@ -58,6 +60,7 @@ const Login = () => {
           <label htmlFor="assword" className="text-gray-600 block text-xl font-bold">Contraseña: </label>
           <input
             id="password"
+            data-cy="password-input"
             type="password"
             placeholder="Contraseña"
             onChange={e => setPassword(e.target.value)}
@@ -67,15 +70,18 @@ const Login = () => {
 
         <button
           type="submit"
+          data-cy="submit-login"
           className=" mt-2 w-full p-3 bg-sky-800 text-white rounded-lg text-xl hover:cursor-pointer hover:bg-sky-900 duration-500 hover:scale-105 mb-5"
-        >{wait ? <Spinner /> : "Iniciar Sesión"}</button>
+        >{wait ? <Spinner /> : "Iniciar Sesión"}
+        </button>
       </form>
 
       <nav className="xl:flex xl:justify-around">
-        <Link to="registrar" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black">
+        <Link to="registrar" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black" data-cy="register-link">
           ¿No tienes una cuenta? Registrate
         </Link>
-        <Link to="/recuperar-contraseña" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black">
+        <Link to="/recuperar-contraseña" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black"
+        data-cy="recover-password-link">
           Recuperar Contraseña
         </Link>
       </nav>

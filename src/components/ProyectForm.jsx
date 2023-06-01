@@ -68,6 +68,7 @@ const ProyectForm = () => {
       <div className="mb-5">
         <label htmlFor="name" className="text-gray-700 font-bold text-md">Proyecto</label>
         <input type="text" id="name" className="border w-full mt-2 p-2 placeholder-gray-400 rounded-md"
+          data-cy="project-name-input"
           placeholder="Nombre del Proyecto"
           value={name}
           onChange={e => setName(e.target.value)}
@@ -77,6 +78,7 @@ const ProyectForm = () => {
       <div className="mb-5">
         <label htmlFor="description" className="text-gray-700 font-bold text-md">Descripción </label>
         <textarea id="description" className="border w-full mt-2 p-2 placeholder-gray-400 rounded-md"
+        data-cy="project-description-input"
           placeholder="Descripción del Proyecto.."
           onChange={e => setDescription(e.target.value)}
           value={description}
@@ -86,6 +88,7 @@ const ProyectForm = () => {
       <div className="mb-5">
         <label htmlFor="deliveryDate" className="text-gray-700 font-bold text-md">Fecha de entrega</label>
         <input type="date" id="deliveryDate" className="border w-full mt-2 p-2 placeholder-gray-400 rounded-md"
+        data-cy="project-date-input"
           onChange={e => setDeliveryDate(e.target.value)}
           value={deliveryDate}
         />
@@ -95,12 +98,13 @@ const ProyectForm = () => {
         <label htmlFor="client" className="text-gray-700 font-bold text-md"> Cliente</label>
         <input type="text" id="client" className="border w-full mt-2 p-2 placeholder-gray-400 rounded-md"
           placeholder="Nombre del cliente.."
+          data-cy="project-client-input"
           onChange={e => setClient(e.target.value)}
           value={client}
         />
       </div>
 
-      <button type="submit" disabled={checkForm}  className={`${checkForm ? "opacity-50 " : "cursor-pointer"} ${darkMode ? "bg-black text-white" : "bg-sky-700 text-white"} p-3 mt-3 w-full rounded-md font-bold  duration-300 `} >{!wait ? edit ? "Guardar Cambios" : "Crear Proyecto" : <Spinner />}</button>
+      <button type="submit" data-cy="new-project" disabled={checkForm}  className={`${checkForm ? "opacity-50 " : "cursor-pointer"} ${darkMode ? "bg-black text-white" : "bg-sky-700 text-white"} p-3 mt-3 w-full rounded-md font-bold  duration-300 `} >{!wait ? edit ? "Guardar Cambios" : "Crear Proyecto" : <Spinner />}</button>
 
     </form>
   )

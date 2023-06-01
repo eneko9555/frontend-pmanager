@@ -46,15 +46,18 @@ const Register = () => {
 
   return (
     <>
-      <h1 className="font-black text-7xl">Crea una Cuenta y Administra tus <span className="text-sky-800">Proyectos</span></h1>
+      <h1 data-cy="title" className="font-black text-7xl">Crea una Cuenta y Administra tus <span className="text-sky-800">Proyectos</span></h1>
 
-      <form className="my-10 bg-white shadow-md rounded-lg p-5" onSubmit={handleSubmit}>
+      <form className="my-10 bg-white shadow-md rounded-lg p-5" onSubmit={handleSubmit}
+        data-cy="register-form" 
+      >
         {alert.msg && <Alert alert={alert}></Alert>}
         <div className="my-5">
           <label htmlFor="name" className="text-gray-600 block text-xl font-bold">Nombre: </label>
           <input
             id="name"
             type="text"
+            data-cy="name-input" 
             placeholder="Tu nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -66,6 +69,7 @@ const Register = () => {
           <label htmlFor="email" className="text-gray-600 block text-xl font-bold">Email: </label>
           <input
             id="email"
+            data-cy="email-input" 
             type="email"
             placeholder="Email de Registro"
             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
@@ -78,6 +82,7 @@ const Register = () => {
           <label htmlFor="password" className="text-gray-600 block text-xl font-bold">Contraseña: </label>
           <input
             id="password"
+            data-cy="password-input" 
             type="password"
             placeholder="Contraseña"
             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
@@ -91,6 +96,7 @@ const Register = () => {
           <input
             id="repetir-password"
             type="password"
+            data-cy="password2-input" 
             placeholder="Repite tu Contraseña"
             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
             value={repetirPassword}
@@ -100,16 +106,17 @@ const Register = () => {
 
         <input
           type="submit"
+          data-cy="submit-input" 
           value="Crear Cuenta"
           className=" mt-2 w-full p-3 bg-sky-800 text-white rounded-lg text-xl hover:cursor-pointer hover:bg-sky-900 duration-500 hover:scale-105 mb-5"
         />
       </form>
 
-      <nav className="  lg:flex lg:justify-around pb-5">
-        <Link to="/" className="block my-2 font-semibold text-slate-500 hover:text-black uppercase">
+      <nav className="lg:flex lg:justify-around pb-5">
+        <Link to="/" data-cy="login-link" className="block my-2 font-semibold text-slate-500 hover:text-black uppercase">
           ¿Ya tienes una cuenta? Inicia Sesión
         </Link>
-        <Link to="/recuperar-contraseña" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black">
+        <Link to="/recuperar-contraseña" data-cy="recover-password-link" className="block my-2 font-semibold text-slate-500 uppercase hover:text-black">
           Recuperar Contraseña
         </Link>
       </nav>

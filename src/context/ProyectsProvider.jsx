@@ -36,14 +36,13 @@ const ProyectsProvider = ({ children }) => {
         getProyects()
     }, [auth])
 
-    //Connnect to server
-    useEffect(() => {
-        socket = io(import.meta.env.VITE_BACKEND_URL)
-
-        return () => {
-            socket.disconnect()
-        }
-    },  [])
+    // Connnect to server
+    // useEffect(() => {
+    //     socket = io(import.meta.env.VITE_BACKEND_URL)
+    //     return () => {
+    //         socket.disconnect()
+    //     }
+    // },  [])
 
 
     function showAlert(alert) {

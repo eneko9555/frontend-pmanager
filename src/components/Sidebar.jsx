@@ -28,6 +28,7 @@ const Sidebar = () => {
         </Switch>
       </div>
       <Link to={"crear-proyecto"}
+        data-cy="new-project-input"
         className={`${darkMode ? "bg-white text-black hover:opacity-50 hover:scale-95" : "bg-sky-700 hover:opacity-50 hover:scale-95 text-white"} font-bold block text-center p-2 rounded-md  mt-5 duration-300`}
       >Nuevo Proyecto</Link>
     </aside>
